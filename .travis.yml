@@ -5,5 +5,4 @@ rust:
   - nightly
 
 script:
- - cd dav1d-sys
- - cargo build --release --verbose
+ - cargo build --manifest-path dav1d-sys/Cargo.toml --release --verbose

@@ -4,5 +4,4 @@ rust:
   - stable
   - nightly
 
-script:
- - cargo build --manifest-path dav1d-sys/Cargo.toml --release --verbose
+before_install: cd dav1d-sys

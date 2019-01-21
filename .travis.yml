@@ -4,4 +4,3 @@ rust:
   - stable
   - nightly
 
-before_install: cd dav1d-sys

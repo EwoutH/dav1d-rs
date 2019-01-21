@@ -4,6 +4,9 @@ rust:
   - stable
   - nightly
 
+before_install:
+ - git clone https://github.com/rust-av/rust-av.git
+
 script: 
  - git submodule update --init --recursive
  - cargo build --release --verbose

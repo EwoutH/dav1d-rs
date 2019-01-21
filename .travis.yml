@@ -3,9 +3,7 @@ language: rust
 rust:
   - stable
   - nightly
-  
-before_install:
- - git submodule update --init --recursive
 
 script: 
+ - git submodule update --init --recursive
  - cargo build --release --verbose

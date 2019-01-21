@@ -4,4 +4,4 @@ rust:
   - stable
   - nightly
 
-script: cargo build --release dav1d-sys/build.rs
+script: cargo build --release

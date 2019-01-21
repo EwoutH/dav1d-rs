@@ -6,8 +6,9 @@
 
 before_install:
  - sudo apt-get update
- - sudo apt-get install python3 python3-pip ninja-build
- - pip3 install --user meson
+ - sudo apt-get install python3
+ - pip3 install meson
+ - pip3 install ninja-build
  - sudo apt-get install nasm
 
  - git clone https://code.videolan.org/videolan/dav1d.git

@@ -5,5 +5,4 @@ rust:
   - nightly
 
 script: 
- - cd dav1d-sys
- - cargo build --release
+ - cargo --help

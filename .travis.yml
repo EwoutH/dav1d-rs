@@ -1,12 +1,19 @@
 language: rust
 
 rust:
-  - stable
+  #- stable ## Let's spare Travis
   - nightly
 
 before_install:
- - git clone https://github.com/rust-av/rust-av.git
+ - sudo apt-get update
+ - sudo apt-get install meson
+ - apt-get install ninja-build
+ - git clone https://code.videolan.org/videolan/dav1d.git
+ - meson build --buildtype release
+ - ninja -C build
+
+ - git submodule update --init --recursive
 
 script: 
- - git submodule update --init --recursive
  - cargo build --release --verbose
+ - cargo test --verbose

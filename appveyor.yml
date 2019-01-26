@@ -32,12 +32,12 @@ install:
     # Install Nasm & Doxygen
     - mkdir nasm & cd nasm
     - appveyor DownloadFile https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-win64.zip -FileName nasm.zip
-    - 7z e -y nasm.zip & set PATH=%PATH%;%CD%\nasm & cd %APPVEYOR_BUILD_FOLDER%
+    - 7z e -y nasm.zip & set PATH=%PATH%;%CD% & cd %APPVEYOR_BUILD_FOLDER%
 
     # Install Doxygen
     - mkdir doxygen & cd doxygen
     - appveyor DownloadFile https://github.com/doxygen/doxygen/archive/Release_1_8_15.zip -FileName doxygen.zip
-    - 7z e -y doxygen.zip & set PATH=%PATH%;%CD%\doxygen & cd %APPVEYOR_BUILD_FOLDER%
+    - 7z e -y doxygen.zip & set PATH=%PATH%;%CD% & cd %APPVEYOR_BUILD_FOLDER%
 
     # Install dav1d
     - IF "%Dav1d%"=="stable" (appveyor DownloadFile https://code.videolan.org/videolan/dav1d/-/archive/0.1.0/dav1d-0.1.0.zip & 7z e -y dav1d-0.1.0.zip & cd dav1d-0.1.0)

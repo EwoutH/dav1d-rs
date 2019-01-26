@@ -31,7 +31,7 @@ install:
 
     # Install Nasm & Doxygen
     - appveyor DownloadFile https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-win64.zip -FileName nasm.zip
-    - appveyor DownloadFile http://doxygen.nl/files/doxygen-1.8.15.windows.x64.bin.zip -FileName doxygen.zip
+    - appveyor DownloadFile https://github.com/doxygen/doxygen/archive/Release_1_8_15.zip -FileName doxygen.zip
     - 7z e -y nasm.zip & 7z e -y doxygen.zip
     - set PATH=%PATH%;%CD%\doxygen;%CD%\nasm
 

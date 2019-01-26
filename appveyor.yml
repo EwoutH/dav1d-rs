@@ -9,8 +9,8 @@ environment:
       Dav1d: stable
     - platform: x86_64
       target: x86_64-pc-windows-msvc
-      Rust: nigthly
-      Dav1d: nigthly
+      Rust: nightly
+      Dav1d: nightly
     - platform: arm64
       target: aarch64-pc-windows-msvc
       Rust: nightly
@@ -44,9 +44,8 @@ install:
     - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" %arch%
 
     # Install dav1d
-    - IF "%Dav1d%"=="stable" (appveyor DownloadFile https://code.videolan.org/videolan/dav1d/-/archive/0.1.0/dav1d-0.1.0.zip -FileName dav1d.zip & 7z e -y dav1d.zip)
-    - IF "%Dav1d%"=="nightly" (git clone https://code.videolan.org/videolan/dav1d.git)
-    - cd dav1d
+    - IF "%Dav1d%"=="stable" (appveyor DownloadFile https://code.videolan.org/videolan/dav1d/-/archive/0.1.0/dav1d-0.1.0.zip -FileName dav1d.zip & 7z e -y dav1d.zip & cd "dav1d-0.1.0")
+    - IF "%Dav1d%"=="nightly" (git clone https://code.videolan.org/videolan/dav1d.git & cd dav1d)
     - meson build --buildtype release
     - ninja -C build
     

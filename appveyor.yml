@@ -29,13 +29,9 @@ install:
     - cargo -vV
     - rustup target add %target%
 
-    # Nasm
-    - choco install doxygen.portable
-
-    # Nasm
-    - appveyor DownloadFile https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-win64.zip -FileName nasm.zip
-    - 7z e -y nasm.zip
-    - set PATH=%PATH%;%CD%\nasm
+    # Install Doxygen & Nasm
+    - choco install doxygen
+    - choco install nasm
 
     # Install Meson & Ninja
     - cmd: mkdir C:\ninja-build

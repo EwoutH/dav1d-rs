@@ -35,6 +35,10 @@ install:
     - meson build --buildtype release
     - ninja -C build
 
+    # Install Doxygen & Nasm
+    - choco install doxygen.install
+    - choco install nasm
+
     # Install Rust
     - appveyor DownloadFile https://win.rustup.rs/ -FileName rustup-init.exe
     - rustup-init -yv --default-toolchain %Rust% --default-host %host%
@@ -43,10 +47,6 @@ install:
     - rustc -vV
     - cargo -vV
     - rustup target add %target%
-
-    # Install Doxygen & Nasm
-    - choco install doxygen
-    - choco install nasm
 
     # Update submodules
     - git submodule update --init --recursive

@@ -30,7 +30,7 @@ install:
     - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" %arch%
 
     # Install dav1d
-    - IF "%Dav1d%"=="stable" (appveyor DownloadFile https://code.videolan.org/videolan/dav1d/-/archive/0.1.0/dav1d-0.1.0.zip & 7z e -y dav1d-0.1.0.zip & cd "dav1d-0.1.0")
+    - IF "%Dav1d%"=="stable" (appveyor DownloadFile https://code.videolan.org/videolan/dav1d/-/archive/0.1.0/dav1d-0.1.0.zip & 7z e -y dav1d-0.1.0.zip & cd "dav1d-0.1.0\dav1d-0.1.0")
     - IF "%Dav1d%"=="nightly" (git clone https://code.videolan.org/videolan/dav1d.git & cd dav1d)
     - meson build --buildtype release
     - ninja -C build
